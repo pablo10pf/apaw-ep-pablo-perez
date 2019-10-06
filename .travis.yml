@@ -7,12 +7,12 @@ branches:
 notifications:
   email:
     recipients:
-      - xxx@upm.es
+      - pablo.perezfer@alumnos.upm.es
 script:
   #Test unitario y de integracion con cobertura
   - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
   #SONARCLOUD
-  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=xxx -Dsonar.login=$SONAR
+  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=pablo-upm -Dsonar.login=$SONAR
 
 #Deploy https://apaw-ep-xxx.herokuapp.com
 deploy:
@@ -21,4 +21,4 @@ deploy:
     secure: $HEROKU
   on:
     branch: master
-
+  app: apaw-ep-pablo-perez
