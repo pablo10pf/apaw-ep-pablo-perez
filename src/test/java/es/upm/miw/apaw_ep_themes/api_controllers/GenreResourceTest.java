@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ApiTestConfig
@@ -36,5 +38,26 @@ public class GenreResourceTest {
                 .body(BodyInserters.fromObject(genreDto))
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.BAD_REQUEST);
+    }
+
+    @Test
+    void testReadAll() {
+        GenreDto genreDto = new GenreDto("Rock", "USA");
+        this.webTestClient
+                .post().uri(GenreResource.GENRES)
+                .body(BodyInserters.fromObject(genreDto))
+                .exchange()
+                .expectStatus().isOk();
+        List<GenreDto> list =
+                this.webTestClient
+                        .get().uri(GenreResource.GENRES)
+                        .exchange()
+                        .expectStatus().isOk()
+                        .expectBodyList(GenreDto.class)
+                        .returnResult().getResponseBody();
+        assertTrue(list.size() > 0);
+        assertNotNull(list.get(0).getId());
+        assertNotNull(list.get(0).getName());
+        assertNotNull(list.get(0).getOrigin());
     }
 }
