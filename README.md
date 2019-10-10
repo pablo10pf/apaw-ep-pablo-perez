@@ -3,10 +3,10 @@
 > Este proyecto es un apoyo docente de la asignatura. Se quiere mostrar un ejemplo completo de un API-Rest para comprender la arquitectura y su proceso evolutivo
 
 ### Estado del código
-[![Build Status](https://travis-ci.org/miw-upm/apaw-ep-themes.svg?branch=develop)](https://travis-ci.org/miw-upm/apaw-ep-themes)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aapaw-ep-themes&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aapaw-ep-themes)
-[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/apaw-ep-themes?branch=develop)](https://bettercodehub.com/)
-[![Heroku broken](https://apaw-ep-themes.herokuapp.com/system/version-badge)](https://apaw-ep-themes.herokuapp.com/swagger-ui.html)
+[![Build Status](https://travis-ci.org/pablo10pf/apaw-ep-pablo-perez.svg?branch=develop)](https://travis-ci.org/pablo10pf/apaw-ep-pablo-perez)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aapaw-ep-pablo-perez&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aapaw-ep-pablo-perez)
+[![BCH compliance](https://bettercodehub.com/edge/badge/pablo10pf/apaw-ep-pablo-perez?branch=master)](https://bettercodehub.com/)
+[![Heroku broken](https://apaw-ep-pablo-perez.herokuapp.com/system/version-badge)](https://apaw-ep-pablo-perez.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
 * Java

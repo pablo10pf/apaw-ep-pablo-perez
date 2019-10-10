@@ -4,7 +4,7 @@ import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
 
 public class GenreDto {
-    private int id;
+    private String id;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class GenreDto {
         this.origin = genre.getOrigin();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

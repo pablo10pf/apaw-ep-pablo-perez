@@ -3,12 +3,17 @@ package es.upm.miw.apaw_ep_themes.business_controller;
 import es.upm.miw.apaw_ep_themes.daos.GenreDao;
 import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.dtos.GenreDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class GenreBusinessController {
     private GenreDao genreDao;
 
+    @Autowired
     public GenreBusinessController(GenreDao genreDao){
         this.genreDao=genreDao;
     }
@@ -16,5 +21,10 @@ public class GenreBusinessController {
         Genre genre = new Genre(genreDto.getName(),genreDto.getOrigin());
         this.genreDao.save(genre);
         return new GenreDto(genre);
+    }
+
+    public List<GenreDto> readAll() {
+        List<Genre> genres = this.genreDao.findAll();
+        return genres.stream().map(GenreDto::new).collect(Collectors.toList());
     }
 }

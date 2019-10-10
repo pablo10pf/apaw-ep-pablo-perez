@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Genre {
     @Id
-    private int id;
+    private String id;
 
     private String name;
 
@@ -17,7 +17,7 @@ public class Genre {
         this.origin = origin;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
