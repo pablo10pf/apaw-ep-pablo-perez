@@ -8,12 +8,12 @@ public class Genre {
     @Id
     private int id;
 
-    private String genre;
+    private String name;
 
     private String origin;
 
-    public Genre(String genre, String origin) {
-        this.genre = genre;
+    public Genre(String name, String origin) {
+        this.name = name;
         this.origin = origin;
     }
 
@@ -21,8 +21,8 @@ public class Genre {
         return id;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getName() {
+        return name;
     }
 
     public String getOrigin() {
@@ -33,7 +33,7 @@ public class Genre {
     public String toString() {
         return "Genre{" +
                 "id=" + id +
-                ", genre='" + genre + '\'' +
+                ", name='" + name + '\'' +
                 ", origin='" + origin + '\'' +
                 '}';
     }

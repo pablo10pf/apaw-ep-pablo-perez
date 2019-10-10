@@ -24,7 +24,7 @@ public class GenreResourceTest {
                 .expectStatus().isOk()
                 .expectBody(GenreDto.class).returnResult().getResponseBody();
         assertNotNull(genreDto);
-        assertEquals("Pop",genreDto.getGenre());
+        assertEquals("Pop",genreDto.getName());
         assertEquals("England", genreDto.getOrigin());
     }
 
