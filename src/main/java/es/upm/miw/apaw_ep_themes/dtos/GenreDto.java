@@ -6,21 +6,21 @@ import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
 public class GenreDto {
     private int id;
 
-    private String genre;
+    private String name;
 
     private String origin;
 
     public GenreDto() {
     }
 
-    public GenreDto(String genre, String origin) {
-        this.genre = genre;
+    public GenreDto(String name, String origin) {
+        this.name = name;
         this.origin = origin;
     }
 
     public GenreDto(Genre genre) {
         this.id = genre.getId();
-        this.genre = genre.getGenre();
+        this.name = genre.getName();
         this.origin = genre.getOrigin();
     }
 
@@ -32,12 +32,12 @@ public class GenreDto {
         this.id = id;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getName() {
+        return name;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getOrigin() {
@@ -49,7 +49,7 @@ public class GenreDto {
     }
 
     public void validate() {
-        if (genre == null || genre.isEmpty() || origin == null || origin.isEmpty()) {
+        if (name == null || name.isEmpty() || origin == null || origin.isEmpty()) {
             throw new BadRequestException("Incomplete GenreDto");
         }
     }
@@ -58,7 +58,7 @@ public class GenreDto {
     public String toString() {
         return "GenreDto{" +
                 "id=" + id +
-                ", genre='" + genre + '\'' +
+                ", name='" + name + '\'' +
                 ", origin='" + origin + '\'' +
                 '}';
     }

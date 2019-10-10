@@ -13,7 +13,7 @@ public class GenreBusinessController {
         this.genreDao=genreDao;
     }
     public GenreDto create(GenreDto genreDto){
-        Genre genre = new Genre(genreDto.getGenre(),genreDto.getOrigin());
+        Genre genre = new Genre(genreDto.getName(),genreDto.getOrigin());
         this.genreDao.save(genre);
         return new GenreDto(genre);
     }
