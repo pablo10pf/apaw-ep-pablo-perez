@@ -1,7 +1,6 @@
 package es.upm.miw.apaw_ep_themes.api_controllers;
 
 import es.upm.miw.apaw_ep_themes.ApiTestConfig;
-import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.dtos.GenreDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class GenreResourceTest {
     }
 
     @Test
-    void testCreateSuggestionException() {
+    void testCreateGenreException() {
         GenreDto genreDto = new GenreDto( null,null);
         this.webTestClient
                 .post().uri(GenreResource.GENRES)
