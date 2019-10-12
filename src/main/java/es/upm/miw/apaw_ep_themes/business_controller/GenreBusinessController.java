@@ -3,6 +3,9 @@ package es.upm.miw.apaw_ep_themes.business_controller;
 import es.upm.miw.apaw_ep_themes.daos.GenreDao;
 import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.dtos.GenreDto;
+import es.upm.miw.apaw_ep_themes.dtos.GenrePatchDto;
+import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
+import es.upm.miw.apaw_ep_themes.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -26,5 +29,17 @@ public class GenreBusinessController {
     public List<GenreDto> readAll() {
         List<Genre> genres = this.genreDao.findAll();
         return genres.stream().map(GenreDto::new).collect(Collectors.toList());
+    }
+
+    public void patch(String id, GenrePatchDto userPatchDto) {
+        Genre genre = this.genreDao.findById(id).orElseThrow(() -> new NotFoundException("Genre id: " + id));
+        switch (userPatchDto.getPath()) {
+            case "origin":
+                genre.setOrigin(userPatchDto.getNewValue());
+                break;
+            default:
+                throw new BadRequestException("GenrePatchDto is invalid");
+        }
+        this.genreDao.save(genre);
     }
 }
