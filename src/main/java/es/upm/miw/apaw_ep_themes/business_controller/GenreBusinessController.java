@@ -33,12 +33,11 @@ public class GenreBusinessController {
 
     public void patch(String id, GenrePatchDto userPatchDto) {
         Genre genre = this.genreDao.findById(id).orElseThrow(() -> new NotFoundException("Genre id: " + id));
-        switch (userPatchDto.getPath()) {
-            case "origin":
-                genre.setOrigin(userPatchDto.getNewValue());
-                break;
-            default:
-                throw new BadRequestException("GenrePatchDto is invalid");
+        if (userPatchDto.getPath().equals("origin")) {
+            genre.setOrigin(userPatchDto.getNewValue());
+        }
+        else{
+            throw new BadRequestException("GenrePatchDto is invalid");
         }
         this.genreDao.save(genre);
     }
