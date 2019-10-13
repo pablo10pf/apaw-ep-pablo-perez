@@ -30,6 +30,7 @@ public class SongsProposalControllerTest {
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
         SongsProposalDto songsProposalDto= new SongsProposalDto("Blanco y negro",dateTime);
+        songsProposalDto.validate();
         songsProposalBusinessController.create(songsProposalDto);
         assertEquals(1, this.songsProposalDao.findAll().size());
     }

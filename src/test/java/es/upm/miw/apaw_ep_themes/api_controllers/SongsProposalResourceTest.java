@@ -4,6 +4,7 @@ import es.upm.miw.apaw_ep_themes.ApiTestConfig;
 import es.upm.miw.apaw_ep_themes.dtos.SongsProposalDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
 
@@ -33,5 +34,15 @@ public class SongsProposalResourceTest {
         assertNotNull(songsProposalDto);
         assertEquals("Bonito", songsProposalDto.getTitle());
         assertEquals(dateTime, songsProposalDto.getDate());
+    }
+
+    @Test
+    void testCreateSongsProposalException() {
+        SongsProposalDto songsProposalDto = new SongsProposalDto(null, null);
+        this.webTestClient
+                .post().uri(SongsProposalResource.SONGSPROPOSAL)
+                .body(BodyInserters.fromObject(songsProposalDto))
+                .exchange()
+                .expectStatus().isEqualTo(HttpStatus.BAD_REQUEST);
     }
 }
