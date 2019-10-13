@@ -2,7 +2,6 @@ package es.upm.miw.apaw_ep_themes.dtos;
 
 import es.upm.miw.apaw_ep_themes.documents.SongsProposal;
 import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
-import org.hibernate.validator.internal.util.privilegedactions.LoadClass;
 
 import java.time.LocalDateTime;
 
