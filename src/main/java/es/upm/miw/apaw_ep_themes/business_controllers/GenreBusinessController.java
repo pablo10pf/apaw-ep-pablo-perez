@@ -1,4 +1,4 @@
-package es.upm.miw.apaw_ep_themes.business_controller;
+package es.upm.miw.apaw_ep_themes.business_controllers;
 
 import es.upm.miw.apaw_ep_themes.daos.GenreDao;
 import es.upm.miw.apaw_ep_themes.documents.Genre;
@@ -20,6 +20,7 @@ public class GenreBusinessController {
     public GenreBusinessController(GenreDao genreDao){
         this.genreDao=genreDao;
     }
+
     public GenreDto create(GenreDto genreDto){
         Genre genre = new Genre(genreDto.getName(),genreDto.getOrigin());
         this.genreDao.save(genre);

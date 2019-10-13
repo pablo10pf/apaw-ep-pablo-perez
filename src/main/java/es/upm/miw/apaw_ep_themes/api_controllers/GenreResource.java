@@ -1,6 +1,6 @@
 package es.upm.miw.apaw_ep_themes.api_controllers;
 
-import es.upm.miw.apaw_ep_themes.business_controller.GenreBusinessController;
+import es.upm.miw.apaw_ep_themes.business_controllers.GenreBusinessController;
 import es.upm.miw.apaw_ep_themes.dtos.GenreDto;
 import es.upm.miw.apaw_ep_themes.dtos.GenrePatchDto;
 import org.springframework.beans.factory.annotation.Autowired;
