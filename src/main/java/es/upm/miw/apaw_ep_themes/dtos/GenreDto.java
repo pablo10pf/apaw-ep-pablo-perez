@@ -11,6 +11,7 @@ public class GenreDto {
     private String origin;
 
     public GenreDto() {
+        //empty for framework
     }
 
     public GenreDto(String name, String origin) {

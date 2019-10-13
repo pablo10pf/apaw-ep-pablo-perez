@@ -13,6 +13,10 @@ public class SongsProposalDto {
 
     private LocalDateTime date;
 
+    public SongsProposalDto(){
+        //empty for framework
+    }
+
     public SongsProposalDto(String title, LocalDateTime date) {
         this.title = title;
         this.date = date;
