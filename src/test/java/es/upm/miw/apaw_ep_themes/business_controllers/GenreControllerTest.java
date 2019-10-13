@@ -1,7 +1,6 @@
 package es.upm.miw.apaw_ep_themes.business_controllers;
 
 import es.upm.miw.apaw_ep_themes.TestConfig;
-import es.upm.miw.apaw_ep_themes.business_controller.GenreBusinessController;
 import es.upm.miw.apaw_ep_themes.daos.GenreDao;
 import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.dtos.GenrePatchDto;
