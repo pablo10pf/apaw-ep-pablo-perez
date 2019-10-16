@@ -1,6 +1,5 @@
 package es.upm.miw.apaw_ep_themes.business_controllers;
 
-import es.upm.miw.apaw_ep_themes.daos.GenreDao;
 import es.upm.miw.apaw_ep_themes.daos.SongDao;
 import es.upm.miw.apaw_ep_themes.documents.Song;
 import es.upm.miw.apaw_ep_themes.dtos.SongDto;
