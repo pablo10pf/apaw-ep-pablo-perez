@@ -3,7 +3,6 @@ package es.upm.miw.apaw_ep_themes.dtos;
 import es.upm.miw.apaw_ep_themes.documents.Song;
 import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class SongDto {
@@ -35,24 +34,12 @@ public class SongDto {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public LocalTime getDuration() {
         return duration;
-    }
-
-    public void setDuration(LocalTime duration) {
-        this.duration = duration;
     }
 
     public String getGenreId() {

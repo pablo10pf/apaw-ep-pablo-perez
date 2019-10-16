@@ -1,7 +1,5 @@
 package es.upm.miw.apaw_ep_themes.daos;
 
-import es.upm.miw.apaw_ep_themes.daos.GenreDao;
-import es.upm.miw.apaw_ep_themes.daos.SongDao;
 
 import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.documents.Song;
@@ -10,14 +8,13 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 
 @Service
 public class DatabaseSeeder {
     private SongDao songDao;
     private GenreDao genreDao;
     private Genre genre;
-    private Song song;
+
 
     @Autowired
     public DatabaseSeeder(SongDao songDao, GenreDao genreDao){
@@ -33,7 +30,7 @@ public class DatabaseSeeder {
         genreDao.save(genre);
     }
     private void seedSongs(){
-        song = new Song("Now",formatTime("00:03:20"),genre);
+        Song song = new Song("Now",formatTime("00:03:20"),genre);
         song.setId("1");
         songDao.save(song);
     }
