@@ -21,14 +21,6 @@ public class SongBusinessController {
         this.genreDao = genreDao;
     }
 
-    public SongDto create(SongDto songDto) {
-        Genre genre = this.genreDao.findById(songDto.getGenreId()).
-                orElseThrow(() -> new NotFoundException("Genre id: " + songDto.getGenreId()));
-        Song song = new Song(songDto.getTitle(), songDto.getDuration(), genre);
-        this.songDao.save(song);
-        return new SongDto(song);
-    }
-
     public void update(String id, SongDto songDto){
         Song song= this.findSongByIdAssured(id);
         song.setTitle(songDto.getTitle());
