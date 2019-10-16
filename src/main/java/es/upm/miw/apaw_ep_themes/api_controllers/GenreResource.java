@@ -37,4 +37,5 @@ public class GenreResource {
         genrePatchDto.validate();
         this.genreBusinessController.patch(id, genrePatchDto);
     }
+
 }

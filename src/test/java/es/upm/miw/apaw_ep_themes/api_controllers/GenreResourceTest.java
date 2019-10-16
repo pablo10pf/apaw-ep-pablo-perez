@@ -93,8 +93,9 @@ public class GenreResourceTest {
 
     @Test
     void testGenreBadPatchDtoException() {
+        String id = createGenre().getId();
         this.webTestClient
-                .patch().uri(GenreResource.GENRES + GenreResource.ID_ID, "no")
+                .patch().uri(GenreResource.GENRES + GenreResource.ID_ID, id)
                 .body(BodyInserters.fromObject(new GenrePatchDto()))
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.BAD_REQUEST);
