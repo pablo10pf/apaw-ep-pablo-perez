@@ -25,5 +25,10 @@ public class SongResource {
         this.songBusinessController.update(id,songDto);
     }
 
+    @DeleteMapping(value = ID_ID)
+    public void delete(@PathVariable String id) {
+        this.songBusinessController.delete(id);
+    }
+
 
 }

@@ -9,12 +9,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ApiTestConfig
@@ -26,18 +24,18 @@ public class SongResourceTest {
 
     private Song song;
 
-    String createGenre(){
+    GenreDto createGenre(){
         return this.webTestClient
                 .post().uri(GenreResource.GENRES)
                 .body(BodyInserters.fromObject(new GenreDto("Rock", "USA")))
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(GenreDto.class).returnResult().getResponseBody().getId();
+                .expectBody(GenreDto.class).returnResult().getResponseBody();
     }
 
     @Test
     void testPutSong() {
-        String genreId=createGenre();
+        String genreId=createGenre().getId();
         song=songDao.findAll().get(0);
         song.setTitle("Not Now");
         song.setDuration(LocalTime.parse("00:03:30",DateTimeFormatter.ofPattern("HH:mm:ss")));
@@ -49,5 +47,17 @@ public class SongResourceTest {
                 .body(BodyInserters.fromObject(songDto))
                 .exchange()
                 .expectStatus().isOk();
+    }
+
+    @Test
+    void testDeleteSong(){
+        String id = this.songDao.findAll().get(0).getId();
+        this.webTestClient
+                .delete().uri(SongResource.SONGS + SongResource.ID_ID, id)
+                .exchange()
+                .expectStatus().isOk();
+        assertTrue(this.songDao.findAll().isEmpty());
+
+        songDao.deleteAll();
     }
 }
