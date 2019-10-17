@@ -41,39 +41,19 @@ public class Album {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public float getPrice() {
         return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public LocalDateTime getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(LocalDateTime releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
     public boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-
     public List<Song> getSongs() {
         return songs;
-    }
-
-    public void setSongs(List<Song> songs) {
-        this.songs = songs;
     }
 }
