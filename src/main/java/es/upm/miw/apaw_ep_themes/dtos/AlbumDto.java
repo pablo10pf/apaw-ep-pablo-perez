@@ -20,13 +20,6 @@ public class AlbumDto {
         //empty for framework
     }
 
-    public AlbumDto(String title, float price, boolean available){
-        this.title=title;
-        this.price=price;
-        this.releaseDate =LocalDateTime.now();
-        this.available=available;
-    }
-
     public AlbumDto(Album album){
         this.title=album.getTitle();
         this.price=album.getPrice();
@@ -54,9 +47,4 @@ public class AlbumDto {
         return available;
     }
 
-    public void validate(){
-        if(title == null || title.isEmpty() || this.price<=0){
-            throw new BadRequestException("Incomplete AlbumDto");
-        }
-    }
 }
