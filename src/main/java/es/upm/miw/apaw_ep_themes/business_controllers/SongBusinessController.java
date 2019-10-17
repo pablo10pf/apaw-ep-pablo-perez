@@ -26,4 +26,9 @@ public class SongBusinessController {
     private Song findSongByIdAssured(String id) {
         return this.songDao.findById(id).orElseThrow(() -> new NotFoundException("Song id: " + id));
     }
+
+    public void delete(String id) {
+        this.songDao.delete(
+                this.songDao.findById(id).orElseThrow(() -> new NotFoundException("Song id: " + id)));
+    }
 }
