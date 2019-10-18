@@ -41,12 +41,4 @@ public class Genre {
         this.origin = origin;
     }
 
-    @Override
-    public String toString() {
-        return "Genre{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", origin='" + origin + '\'' +
-                '}';
-    }
 }

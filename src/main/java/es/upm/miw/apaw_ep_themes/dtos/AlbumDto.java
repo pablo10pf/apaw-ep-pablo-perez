@@ -1,7 +1,6 @@
 package es.upm.miw.apaw_ep_themes.dtos;
 
 import es.upm.miw.apaw_ep_themes.documents.Album;
-import es.upm.miw.apaw_ep_themes.exceptions.BadRequestException;
 
 import java.time.LocalDateTime;
 

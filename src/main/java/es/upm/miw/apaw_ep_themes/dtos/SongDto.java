@@ -18,12 +18,6 @@ public class SongDto {
         //empty for framework
     }
 
-    public SongDto(String title, LocalTime duration, String genreId) {
-        this.title = title;
-        this.duration = duration;
-        this.genreId=genreId;
-    }
-
     public SongDto(Song song) {
         this.id = song.getId();
         this.title = song.getTitle();
