@@ -30,32 +30,16 @@ public class Artist {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public LocalDateTime getBirthdate() {
         return birthdate;
-    }
-
-    public void setBirthdate(LocalDateTime birthdate) {
-        this.birthdate = birthdate;
     }
 
     public List<Album> getAlbums() {
