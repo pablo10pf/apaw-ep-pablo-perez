@@ -51,13 +51,4 @@ public class Song {
     public Genre getGenre() {
         return genre;
     }
-
-    @Override
-    public String toString() {
-        return "Song{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", duration=" + duration +
-                '}';
-    }
 }
