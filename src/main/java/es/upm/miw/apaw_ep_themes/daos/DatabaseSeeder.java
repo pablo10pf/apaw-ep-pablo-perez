@@ -3,6 +3,7 @@ package es.upm.miw.apaw_ep_themes.daos;
 
 import es.upm.miw.apaw_ep_themes.documents.Genre;
 import es.upm.miw.apaw_ep_themes.documents.Song;
+import es.upm.miw.apaw_ep_themes.documents.SongBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,7 @@ public class DatabaseSeeder {
         genreDao.save(genre);
     }
     private void seedSongs(){
-        Song song = new Song("Now",formatTime("00:03:20"),genre);
+        Song song = new SongBuilder().setTitle("Now").setDuration(formatTime("00:03:20")).setGenre(genre).createSong();
         song.setId("1");
         songDao.save(song);
     }
