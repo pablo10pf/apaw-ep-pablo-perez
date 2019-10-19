@@ -3,7 +3,7 @@ package es.upm.miw.apaw_ep_themes.documents;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongComposite extends SongComponent {
+public class SongComposite implements SongComponent {
 
     private List<Song> songs;
 

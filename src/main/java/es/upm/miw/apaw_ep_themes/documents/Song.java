@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalTime;
 
 @Document
-public class Song extends SongComponent {
+public class Song implements SongComponent {
     @Id
     private String id;
 

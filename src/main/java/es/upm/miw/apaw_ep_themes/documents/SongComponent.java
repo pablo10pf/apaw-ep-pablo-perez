@@ -1,11 +1,11 @@
 package es.upm.miw.apaw_ep_themes.documents;
 
-public abstract class SongComponent {
+public interface SongComponent {
 
-    public abstract boolean isComposite();
+    boolean isComposite();
 
-    public abstract void add(Song song);
+    void add(Song song);
 
-    public abstract void remove(Song song);
+    void remove(Song song);
 
 }
