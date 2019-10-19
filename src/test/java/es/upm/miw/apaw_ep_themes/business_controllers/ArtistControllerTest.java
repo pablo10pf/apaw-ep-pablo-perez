@@ -7,6 +7,7 @@ import es.upm.miw.apaw_ep_themes.dtos.ArtistDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -36,6 +37,18 @@ public class ArtistControllerTest {
         artistDto.validate();
         artistBusinessController.create(artistDto);
         assertEquals(1, this.artistDao.findAll().size());
+    }
+
+    @Test
+    void testArtistPublisher(){
+        ArtistDto artistDto = new ArtistDto(createArtist());
+        StepVerifier
+                .create(artistBusinessController.publisher())
+                .then(() -> artistBusinessController.create
+                        (artistDto))
+                .expectNext("New Artist added")
+                .thenCancel()
+                .verify();
     }
 
     @AfterEach
