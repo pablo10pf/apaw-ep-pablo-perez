@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalTime;
 
 @Document
-public class Song {
+public class Song extends SongComponent {
     @Id
     private String id;
 
@@ -21,7 +21,7 @@ public class Song {
     public Song(String title, LocalTime duration, Genre genre) {
         this.title = title;
         this.duration = duration;
-        this.genre=genre;
+        this.genre = genre;
     }
 
     public String getId() {
@@ -50,5 +50,21 @@ public class Song {
 
     public Genre getGenre() {
         return genre;
+    }
+
+
+    @Override
+    public boolean isComposite() {
+        return false;
+    }
+
+    @Override
+    public void add(Song song) {
+        //empty for leaf
+    }
+
+    @Override
+    public void remove(Song song) {
+        //empty for leaf
     }
 }
